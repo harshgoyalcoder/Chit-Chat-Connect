@@ -17,6 +17,7 @@ const http= require("http");
 const socketio = require("socket.io");
 const server = http.createServer(app);
 // const io = new Server(httpServer);
+const PORT= process.env.PORT|| 8000;
 const io=socketio(server,{
   cors:{
     
@@ -121,7 +122,7 @@ app.use("/api/message",messageRoute);
 app.use("/api/conversation",conversationRoute);
 
 
-server.listen(8000,()=>{
+server.listen(PORT,()=>{
     console.log("Jai Shree Krishna");
 
 });
